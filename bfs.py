@@ -1,11 +1,11 @@
 from graph_implementation import Graph,Vertex
 
-def bfs(graph,key):
+def bfs(graph,start,end):
     #vertex=graph.getVertex(key)
     vertices_list=graph.getVertices()
-    queue=[vertices_list[0]]
+    queue=[start]
     visited=[queue[0]]
-    i=0
+    
     
     while len(queue)>0:
       
@@ -21,7 +21,7 @@ def bfs(graph,key):
         #print(visited,"v")
         #print(queue,"q")
         a=queue.pop(0)
-        if(key in visited):return visited
+        if(end in visited):return visited
     return visited
     
     
@@ -42,7 +42,7 @@ g.addEdge(7,25)
 g.addEdge(7,37)
 g.addEdge(9,43)
 g.addEdge(9,52)
-b=bfs(g,52)
+b=bfs(g,9,52)
 #print(g.getGraph())
 print(b)
 '''
