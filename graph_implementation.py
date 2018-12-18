@@ -51,13 +51,19 @@ class Graph:
             self.vertList[t].addNeighbour(f,cost)
 
     def getVertices(self):
-        return self.vertList.keys()
+        return list(self.vertList.keys())
 
     def countVertices(self):
         return self.vertCount
     
     def getGraph(self):
-        return self.vertList
+        graph=dict()
+        for v in self.getVertices():
+            ver=self.vertList[v]
+            graph[v]=ver.getNeighbours()
+        return graph
+
+        
 
 '''  
 
