@@ -1,8 +1,8 @@
 from graph_implementation import Graph,Vertex
 
-def dfs(graph,key):
+def dfs(graph,start,end):
     visited=[]
-    start=graph.getVertices()[0]
+    #start=graph.getVertices()[0]
     stack=[start]
     graph_dict=graph.getGraph()
     while stack:
@@ -12,7 +12,7 @@ def dfs(graph,key):
             for child in graph.getVertex(vertex).getNeighbours():
                 if(child not in visited):
                     stack.append(child)
-        if(key in visited):break
+        if(end in visited):break
     return visited
 
 '''
@@ -29,7 +29,7 @@ g.addEdge(3,7)
 g.addEdge(7,8)
 g.addEdge(5,9)
 
-b=dfs(g,9)
+b=dfs(g,2,9)
 #print(g.getGraph())
 print(b)
 '''
